@@ -76,7 +76,6 @@
         .progress-bar-inner {
             transition: width 0.5s ease-in-out;
         }
-        /* SmartArt like visual for the Neuro method */
         .neuro-box {
             display: flex;
             align-items: center;
@@ -196,13 +195,26 @@
         moonIcon.classList.toggle('hidden');
     });
 
-    // Dummy Data based on the provided PDF analysis
     const lessons = [
-        // Week 1-10 (Phase 1)
         {
             id: 'lesson-1', title: 'Unit 1 & 25 - Present tenses & Earth, sea and sky',
             content: {
-                theory: '### N: Niveau vereinfachen\nDas "Present Tense" ist, wenn etwas jetzt passiert oder eine Gewohnheit ist. Zum Beispiel: "I *eat* breakfast" oder "The sun *rises* every day".',
+                theory: `
+                ### N: Niveau vereinfachen
+                Das **Present Simple** wird verwendet, um über Gewohnheiten und Fakten zu sprechen. Zum Beispiel: "I **drink** coffee every morning." oder "The sun **rises** in the east."
+                Das **Present Continuous** wird verwendet, um über Handlungen zu sprechen, die gerade jetzt passieren. Zum Beispiel: "I **am drinking** coffee now." oder "They **are playing** football."
+                
+                ### E: Essenz zuerst
+                Beginnen Sie, indem Sie die grundlegenden Unterschiede verstehen: **Present Simple** für allgemeine, regelmäßige Dinge und **Present Continuous** für das, was Sie gerade tun. Konzentrieren Sie sich darauf, die korrekte Form von "to be" ($am/is/are$) für Present Continuous zu verwenden und die 's'-Endung für die dritte Person Singular bei Present Simple zu beachten.
+                
+                ### U: Umsichtiger Rahmen
+                Denken Sie an die Prüfungsfragen: Oft müssen Sie entscheiden, welche Zeitform in einem Lückentext oder in einem Satz am besten passt. Achten Sie auf Signalwörter wie "every day" (Present Simple) oder "now" (Present Continuous).
+                
+                ### R: Rückruf starten
+                Üben Sie, Sätze in beiden Zeitformen zu bilden. Versuchen Sie, sich eine tägliche Routine vorzustellen und sie mit dem Present Simple zu beschreiben. Beschreiben Sie dann, was Sie gerade jetzt tun, mit dem Present Continuous.
+                
+                ### O: Offload aufs Papier
+                Erstellen Sie eine Tabelle. In einer Spalte schreiben Sie "Present Simple", in der anderen "Present Continuous". Listen Sie die wichtigsten Verwendungen und die Signalwörter für jede Zeitform auf. Das hilft Ihnen, die Informationen zu verinnerlichen.`,
                 tasks: [
                     { type: 'gap-fill', text: 'She ____ (walk) to school every day.', answer: 'walks' },
                     { type: 'multiple-choice', text: 'What is the correct form? "He ____ a book right now."', options: ['read', 'is reading', 'reads'], answer: 'is reading' }
@@ -216,7 +228,22 @@
         {
             id: 'lesson-2', title: 'Unit 2 & 26 - Past tenses & Living a healthy life',
             content: {
-                theory: '### N: Niveau vereinfachen\nDas "Past Tense" ist, wenn etwas in der Vergangenheit passiert ist. Zum Beispiel: "I *ate* breakfast" oder "She *went* to the park".',
+                theory: `
+                ### N: Niveau vereinfachen
+                Das **Past Simple** wird verwendet, um über abgeschlossene Handlungen in der Vergangenheit zu sprechen. Zum Beispiel: "I **visited** my grandparents yesterday."
+                Das **Past Continuous** wird verwendet, um eine Handlung zu beschreiben, die zu einem bestimmten Zeitpunkt in der Vergangenheit im Gange war. Zum Beispiel: "I **was sleeping** when you called."
+                
+                ### E: Essenz zuerst
+                Konzentrieren Sie sich auf die Unterscheidung: **Past Simple** für eine einzelne, abgeschlossene Aktion und **Past Continuous** für eine längere Aktion, die von einer anderen unterbrochen wird oder die zu einem bestimmten Zeitpunkt passierte.
+                
+                ### U: Umsichtiger Rahmen
+                Achten Sie auf Sätze, in denen zwei vergangene Handlungen vorkommen. In diesen Fällen wird oft das **Past Continuous** für die Hintergrundhandlung und das **Past Simple** für die Handlung verwendet, die dazwischen geschah.
+                
+                ### R: Rückruf starten
+                Denken Sie an Ihren gestrigen Tag. Beschreiben Sie mit dem **Past Simple**, was Sie gemacht haben ("I went to the gym"). Denken Sie dann an einen Zeitpunkt und beschreiben Sie, was Sie zu diesem Zeitpunkt gemacht haben ("At 8pm, I **was watching** a movie").
+                
+                ### O: Offload aufs Papier
+                Erstellen Sie zwei Listen: eine für regelmäßige Verben (Endung auf -ed) und eine für unregelmäßige Verben (die Sie auswendig lernen müssen). Notieren Sie auch Sätze, die beide Zeitformen verwenden, um das Konzept zu festigen.`,
                 tasks: [
                     { type: 'gap-fill', text: 'They ____ (play) football yesterday.', answer: 'played' },
                     { type: 'multiple-choice', text: 'What is the correct form? "We ____ a great time last week."', options: ['had', 'have', 'were having'], answer: 'had' }
@@ -230,7 +257,21 @@
         {
             id: 'lesson-3', title: 'Unit 3 & 27 - Present perfect & Sound waves',
             content: {
-                theory: '### N: Niveau vereinfachen\nDas "Present Perfect" ist für Dinge, die in der Vergangenheit angefangen haben und immer noch relevant sind. Es ist wie eine Brücke zwischen Vergangenheit und Gegenwart. Zum Beispiel: "I *have lived* here for ten years".',
+                theory: `
+                ### N: Niveau vereinfachen
+                Das **Present Perfect** ist wie eine Brücke zwischen der Vergangenheit und der Gegenwart. Wir benutzen es für Handlungen, die in der Vergangenheit passiert sind, aber eine Verbindung zur Gegenwart haben. Zum Beispiel: "I **have lost** my keys" (ich habe sie verloren, und ich habe sie immer noch nicht). Oder für Erfahrungen: "I **have never been** to Paris."
+                
+                ### E: Essenz zuerst
+                Merken Sie sich die Form: **have/has + Partizip Perfekt**. Konzentrieren Sie sich darauf, die Verben im Partizip Perfekt zu lernen (z.B. *gone*, *eaten*, *seen*).
+                
+                ### U: Umsichtiger Rahmen
+                Die Zeit ist hier der Schlüssel. Wenn Sie einen genauen Zeitpunkt in der Vergangenheit haben (z.B. "yesterday", "last week"), verwenden Sie **Past Simple**. Wenn die Zeit unbestimmt ist oder die Handlung immer noch relevant ist, verwenden Sie **Present Perfect**.
+                
+                ### R: Rückruf starten
+                Beschreiben Sie drei Dinge, die Sie in Ihrem Leben getan haben (z.B. "I **have tried** sushi."). Beschreiben Sie dann drei Dinge, die Sie in der letzten Woche getan haben und die noch eine Auswirkung auf jetzt haben (z.B. "I **have finished** my report, so now I can relax.").
+                
+                ### O: Offload aufs Papier
+                Erstellen Sie zwei Spalten: **Past Simple** und **Present Perfect**. Schreiben Sie in jeder Spalte Signalwörter und Beispielsätze, um die Unterschiede zu visualisieren.`,
                 tasks: [
                     { type: 'gap-fill', text: 'I ____ (not see) him since last week.', answer: 'haven\'t seen' },
                     { type: 'multiple-choice', text: 'Which sentence is correct?', options: ['She has gone to the store yesterday.', 'She went to the store yesterday.', 'She have gone to the store yesterday.'], answer: 'She went to the store yesterday.' }
@@ -241,11 +282,24 @@
                 { type: 'gap-fill', question: 'The music ____ (start) now.', answer: 'has started' }
             ]
         },
-        // More lessons will be added here based on the full plan
         {
             id: 'lesson-4', title: 'Unit 4 & 28 - Past perfect & Highs and lows',
             content: {
-                theory: '### N: Niveau vereinfachen\nDas "Past Perfect" ist wie die Vergangenheit der Vergangenheit. Es beschreibt eine Handlung, die vor einer anderen Handlung in der Vergangenheit passiert ist. Zum Beispiel: "I *had finished* my homework before my friend arrived."',
+                theory: `
+                ### N: Niveau vereinfachen
+                Das **Past Perfect** ist die "Vergangenheit der Vergangenheit". Es beschreibt eine Handlung, die vor einer anderen Handlung in der Vergangenheit passiert ist. Zum Beispiel: "I **had finished** my homework before my friend arrived." (Zuerst war die Hausarbeit fertig, dann kam der Freund.)
+                
+                ### E: Essenz zuerst
+                Konzentrieren Sie sich darauf, die korrekte Form zu bilden: **had + Partizip Perfekt**. Erkennen Sie, dass es immer eine "frühere" Handlung gibt, die mit dem **Past Perfect** ausgedrückt wird, und eine "spätere" vergangene Handlung, die oft mit dem **Past Simple** ausgedrückt wird.
+                
+                ### U: Umsichtiger Rahmen
+                Achten Sie auf Signalwörter und Phrasen wie "before", "by the time", oder "after". Diese helfen Ihnen zu erkennen, welche Handlung zuerst passiert ist.
+                
+                ### R: Rückruf starten
+                Denken Sie an zwei Dinge, die Sie in der Vergangenheit nacheinander getan haben. Beschreiben Sie dann, was zuerst passiert ist, mit dem **Past Perfect** und was als nächstes passiert ist, mit dem **Past Simple**. Zum Beispiel: "I **had eaten** breakfast before I left the house."
+                
+                ### O: Offload aufs Papier
+                Zeichnen Sie einen Zeitstrahl. Markieren Sie zwei Punkte in der Vergangenheit und schreiben Sie die Sätze, die die beiden Handlungen beschreiben, darüber. Verwenden Sie Pfeile, um zu zeigen, welche Handlung zuerst passiert ist.`,
                 tasks: [
                     { type: 'gap-fill', text: 'When we arrived, the movie ____ (already start).', answer: 'had already started' },
                     { type: 'multiple-choice', text: 'What is the correct form? "By the time he came, she ____."', options: ['left', 'had left', 'have left'], answer: 'had left' }
@@ -259,7 +313,21 @@
         {
             id: 'lesson-5', title: 'Unit 5 & 29 - Future 1 & Looking back',
             content: {
-                theory: '### N: Niveau vereinfachen\nWir benutzen "will" für spontane Entscheidungen und "going to" für Pläne. Zum Beispiel: "I\'m thirsty, I *will* get a drink." (spontan) vs. "I *am going to visit* my grandmother on Sunday." (geplant).',
+                theory: `
+                ### N: Niveau vereinfachen
+                Wir haben zwei Hauptformen, um über die Zukunft zu sprechen: **will** und **going to**. **Will** wird für spontane Entscheidungen, Vorhersagen und Versprechen verwendet. Zum Beispiel: "I'm thirsty. I **will** get a drink." oder "I think it **will** rain tomorrow." **Going to** wird für Pläne und Absichten verwendet. Zum Beispiel: "I **am going to visit** my friend this weekend."
+                
+                ### E: Essenz zuerst
+                Merken Sie sich den Hauptunterschied: **will** für spontane, **going to** für geplante Aktionen.
+                
+                ### U: Umsichtiger Rahmen
+                Schauen Sie sich den Kontext des Satzes an. Finden Sie Hinweise darauf, ob es sich um eine spontane Entscheidung (kein Plan) oder eine geplante Aktion (oft mit einem Zeitpunkt oder einer Absicht) handelt.
+                
+                ### R: Rückruf starten
+                Planen Sie Ihre nächste Woche mental. Sagen Sie, was Sie "going to" machen werden. Und stellen Sie sich dann eine spontane Situation vor und sagen Sie, was Sie dann "will" tun.
+                
+                ### O: Offload aufs Papier
+                Erstellen Sie eine Mindmap. In der Mitte schreiben Sie "Future Tenses". Zweige gehen ab für "Will" und "Going to". Listen Sie unter jedem Zweig die Verwendungszwecke und Beispiele auf.`,
                 tasks: [
                     { type: 'gap-fill', text: 'I think it ____ (rain) tomorrow.', answer: 'will rain' },
                     { type: 'multiple-choice', text: 'Which is correct? "Look at those clouds! It ____ rain."', options: ['will', 'is going to'], answer: 'is going to' }
@@ -273,7 +341,22 @@
         {
             id: 'lesson-6', title: 'Unit 6 & 30 - Future 2 & Everyone\'s different',
             content: {
-                theory: '### N: Niveau vereinfachen\n"Future Continuous" beschreibt eine Handlung, die zu einem bestimmten Zeitpunkt in der Zukunft im Gange sein wird. Zum Beispiel: "At 10 pm tonight, I *will be watching* a movie."\n"Future Perfect" ist für Handlungen, die bis zu einem bestimmten Zeitpunkt in der Zukunft abgeschlossen sein werden. Zum Beispiel: "By next year, I *will have saved* enough money."',
+                theory: `
+                ### N: Niveau vereinfachen
+                Das **Future Continuous** wird verwendet, um eine Handlung zu beschreiben, die zu einem bestimmten Zeitpunkt in der Zukunft im Gange sein wird. Zum Beispiel: "This time tomorrow, I **will be flying** to Rome."
+                Das **Future Perfect** wird verwendet, um eine Handlung zu beschreiben, die zu einem bestimmten Zeitpunkt in der Zukunft abgeschlossen sein wird. Zum Beispiel: "By 2025, I **will have graduated**."
+                
+                ### E: Essenz zuerst
+                Verstehen Sie den grundlegenden Unterschied: **Future Continuous** für eine Handlung, die "gerade passiert" (aber in der Zukunft), und **Future Perfect** für eine Handlung, die "bereits fertig" ist (aber in der Zukunft).
+                
+                ### U: Umsichtiger Rahmen
+                Achten Sie auf Zeitangaben im Satz. "This time next week" signalisiert oft **Future Continuous**, während "By [year]" oder "By the time" oft **Future Perfect** signalisieren.
+                
+                ### R: Rückruf starten
+                Stellen Sie sich vor, Sie planen eine große Reise in einem Jahr. Beschreiben Sie, was Sie zu einem bestimmten Zeitpunkt während der Reise tun werden (**Future Continuous**) und was Sie bis zu einem bestimmten Zeitpunkt abgeschlossen haben werden (**Future Perfect**).
+                
+                ### O: Offload aufs Papier
+                Schreiben Sie Sätze auf und unterstreichen Sie die Zeitangaben. Das hilft, die Verbindung zwischen der Zeit und der richtigen Zeitform zu erkennen.`,
                 tasks: [
                     { type: 'gap-fill', text: 'By this time next week, I ____ (finish) the book.', answer: 'will have finished' },
                     { type: 'multiple-choice', text: 'At 8 PM, we ____ (sit) on the beach.', options: ['will be sitting', 'will sit', 'will have sat'], answer: 'will be sitting' }
@@ -287,7 +370,21 @@
         {
             id: 'lesson-7', title: 'Unit 7 & 31 - Adjectives & Get active',
             content: {
-                theory: '### N: Niveau vereinfachen\nAdjektive beschreiben Nomen. Sie sind wie kleine "Beschreibungs-Wörter". Zum Beispiel: "the *blue* car" oder "a *happy* person". Die Position ist wichtig: normalerweisse vor dem Nomen. Z.B. "He has a *red* jacket".',
+                theory: `
+                ### N: Niveau vereinfachen
+                Adjektive sind Wörter, die Nomen beschreiben. Sie sagen uns, wie etwas ist. Zum Beispiel: "a **beautiful** flower" oder "a **tall** building". Die Komparativform (-er) wird für Vergleiche zwischen zwei Dingen verwendet, die Superlativform (-est) für Vergleiche zwischen drei oder mehr Dingen.
+                
+                ### E: Essenz zuerst
+                Konzentrieren Sie sich auf die korrekte Verwendung von **Komparativ** und **Superlativ**. Bei kurzen Adjektiven ($1-2$ Silben) verwenden Sie die Endungen "-er" und "-est" (z.B. *bigger*, *biggest*). Bei langen Adjektiven ($3$ oder mehr Silben) verwenden Sie "more" und "most" (z.B. *more beautiful*, *most beautiful*).
+                
+                ### U: Umsichtiger Rahmen
+                Sehen Sie sich die Wörter im Satz an, die das Adjektiv begleiten. "than" signalisiert oft einen Komparativ, während "the" oft einen Superlativ signalisiert.
+                
+                ### R: Rückruf starten
+                Vergleichen Sie drei Dinge in Ihrem Zimmer mit Adjektiven. Zum Beispiel: "My bed is **bigger** than my chair. My desk is the **most useful** item."
+                
+                ### O: Offload aufs Papier
+                Erstellen Sie eine Liste von Adjektiven und ihren Komparativ- und Superlativformen. Teilen Sie die Liste in kurze und lange Adjektive, um die Regeln zu visualisieren.`,
                 tasks: [
                     { type: 'gap-fill', text: 'He is a very ____ (talent) artist.', answer: 'talented' },
                     { type: 'multiple-choice', text: 'Which adjective form is correct?', options: ['The house is bigger.', 'The house is most big.', 'The house is more big.'], answer: 'The house is bigger.' }
@@ -301,7 +398,21 @@
         {
             id: 'lesson-8', title: 'Unit 8 & 32 - Adverbs & My world',
             content: {
-                theory: '### N: Niveau vereinfachen\nAdverbien beschreiben, wie eine Handlung ausgeführt wird. Sie sagen uns, wie etwas getan wird. Viele enden auf "-ly". Zum Beispiel: "She sings *beautifully*".',
+                theory: `
+                ### N: Niveau vereinfachen
+                Adverbien sind Wörter, die Verben, Adjektive oder andere Adverbien beschreiben. Sie sagen uns, wie, wann, wo oder wie oft etwas passiert. Viele Adverbien enden auf "-ly". Zum Beispiel: "He ran **quickly**."
+                
+                ### E: Essenz zuerst
+                Die meisten Adverbien werden gebildet, indem man "-ly" an ein Adjektiv anhängt (z.B. *quick* -> *quickly*). Aber es gibt Ausnahmen, wie *good* -> *well*.
+                
+                ### U: Umsichtiger Rahmen
+                Im Gegensatz zu Adjektiven, die Nomen beschreiben, beschreiben Adverbien Aktionen. Finden Sie das Verb im Satz und fragen Sie sich, wie diese Aktion ausgeführt wird.
+                
+                ### R: Rückruf starten
+                Beschreiben Sie drei Dinge, die Sie tun, und verwenden Sie ein Adverb. Zum Beispiel: "I **sing loudly** in the shower." oder "I **walk slowly** to school."
+                
+                ### O: Offload aufs Papier
+                Erstellen Sie eine Tabelle mit Adjektiven und den entsprechenden Adverbien. Merken Sie sich die unregelmäßigen Paare.`,
                 tasks: [
                     { type: 'gap-fill', text: 'He ran ____ (quick).', answer: 'quickly' },
                     { type: 'multiple-choice', text: 'What is the adverb form of "happy"?', options: ['happily', 'happier', 'happiest'], answer: 'happily' }
@@ -315,7 +426,21 @@
         {
             id: 'lesson-9', title: 'Unit 9 & 33 - Questions & Moving around',
             content: {
-                theory: '### N: Niveau vereinfachen\nFragen können einfach sein ("Are you happy?") oder komplexer, wie "Tag Questions" am Ende eines Satzes. Z.B. "You are happy, *aren\'t you*?".',
+                theory: `
+                ### N: Niveau vereinfachen
+                Wir verwenden verschiedene Formen, um Fragen zu stellen. Normale Fragen beginnen oft mit einem Hilfsverb oder einem Fragewort (z.B. "Do you like coffee?"). **Tag Questions** sind kurze Fragen am Ende eines Satzes, um eine Bestätigung zu erhalten. Zum Beispiel: "You like coffee, **don't you**?"
+                
+                ### E: Essenz zuerst
+                Bei **Tag Questions** ist die Regel einfach: Wenn der Hauptsatz positiv ist, ist die Frage negativ. Wenn der Hauptsatz negativ ist, ist die Frage positiv.
+                
+                ### U: Umsichtiger Rahmen
+                Achten Sie auf das Verb und das Hilfsverb im Hauptsatz, um die korrekte **Tag Question** zu bilden. Wenn der Satz "You are happy..." lautet, ist die **Tag Question** "aren't you?". Wenn der Satz "You don't like..." lautet, ist die **Tag Question** "do you?".
+                
+                ### R: Rückruf starten
+                Denken Sie an 5 Dinge, die Sie über einen Freund wissen, und bilden Sie dann eine **Tag Question**. Zum Beispiel: "You live in Berlin, don't you?"
+                
+                ### O: Offload aufs Papier
+                Erstellen Sie eine Liste von Sätzen und schreiben Sie die korrekte **Tag Question** daneben. Das hilft, die Muster zu erkennen und zu verinnerlichen.`,
                 tasks: [
                     { type: 'gap-fill', text: 'They live in Berlin, ____?', answer: 'don\'t they' },
                     { type: 'multiple-choice', text: 'Which is the correct tag question? "He can\'t swim, ____?"', options: ['can he', 'can\'t he', 'does he'], answer: 'can he' }
@@ -329,7 +454,21 @@
         {
             id: 'lesson-10', title: 'Unit 10 & 34 - Countable/uncountable & Time off',
             content: {
-                theory: '### N: Niveau vereinfachen\nZählbare Nomen kann man zählen (ein Apfel, zwei Äpfel), nicht zählbare nicht (Wasser, Reis). Man benutzt "a/an" für zählbare Nomen und "some" oder "any" für beide.',
+                theory: `
+                ### N: Niveau vereinfachen
+                **Zählbare Nomen** können wir zählen (z.B. *apples*, *books*). Sie haben eine Singular- und eine Pluralform. **Nicht zählbare Nomen** können wir nicht zählen (z.B. *water*, *money*, *information*). Sie haben keine Pluralform.
+                
+                ### E: Essenz zuerst
+                Konzentrieren Sie sich darauf, die häufigsten nicht zählbaren Nomen zu lernen, da diese oft Verwirrung stiften (z.B. *advice*, *furniture*, *news*).
+                
+                ### U: Umsichtiger Rahmen
+                Achten Sie darauf, welche Mengenangaben mit zählbaren und nicht zählbaren Nomen verwendet werden. Wir verwenden **many** und **few** mit zählbaren Nomen (z.B. *many books*) und **much** und **little** mit nicht zählbaren Nomen (z.B. *much water*). **A lot of** kann für beide verwendet werden.
+                
+                ### R: Rückruf starten
+                Gehen Sie durch Ihr Zimmer und listen Sie drei zählbare und drei nicht zählbare Nomen auf. Versuchen Sie, einen Satz mit jeder Art von Nomen zu bilden.
+                
+                ### O: Offload aufs Papier
+                Erstellen Sie eine Tabelle mit drei Spalten: **Zählbar**, **Nicht zählbar** und **Beide**. Listen Sie in jeder Spalte die entsprechenden Nomen und Mengenangaben auf.`,
                 tasks: [
                     { type: 'gap-fill', text: 'I need to buy ____ new shoes.', answer: 'some' },
                     { type: 'multiple-choice', text: 'Which noun is uncountable?', options: ['car', 'money', 'book'], answer: 'money' }
@@ -340,11 +479,24 @@
                 { type: 'gap-fill', question: 'Can I have ____ water, please?', answer: 'some' }
             ]
         },
-        // Phase 2
         {
             id: 'lesson-11', title: 'Unit 11 & 35 - Modals 1 & Where you live',
             content: {
-                theory: '### N: Niveau vereinfachen\nModals sind kleine Verben wie "can", "must", "should". Sie zeigen, wie wahrscheinlich oder notwendig etwas ist. "Must" zeigt eine Notwendigkeit, "can" eine Fähigkeit.',
+                theory: `
+                ### N: Niveau vereinfachen
+                Modalverben (z.B. **can**, **must**, **should**) sind Hilfsverben, die die Bedeutung anderer Verben verändern. Sie drücken Dinge wie Fähigkeit, Notwendigkeit oder Empfehlung aus. **Can** drückt eine Fähigkeit aus (z.B. "I **can** swim."). **Must** drückt eine Notwendigkeit aus (z.B. "You **must** do your homework."). **Should** drückt einen Ratschlag aus (z.B. "You **should** study more.").
+                
+                ### E: Essenz zuerst
+                Konzentrieren Sie sich darauf, die Hauptfunktion jedes Modalverbs zu verstehen. **Can** für "können", **must** für "müssen", **should** für "sollen".
+                
+                ### U: Umsichtiger Rahmen
+                Achten Sie auf den Kontext des Satzes. Handelt es sich um eine Fähigkeit, eine Notwendigkeit oder einen Ratschlag? Der Kontext hilft Ihnen, das richtige Modalverb auszuwählen.
+                
+                ### R: Rückruf starten
+                Denken Sie an Ihren Tag und verwenden Sie die Modalverben, um Sätze zu bilden. Zum Beispiel: "I **can** speak English." "I **must** go to the bank." "I **should** eat healthier."
+                
+                ### O: Offload aufs Papier
+                Erstellen Sie eine Liste der Modalverben und ihrer Hauptbedeutungen. Schreiben Sie einen Beispielsatz für jedes Modalverb auf.`,
                 tasks: [
                     { type: 'gap-fill', text: 'You ____ do your homework.', answer: 'must' },
                     { type: 'multiple-choice', text: 'What is the past tense of "can"? "I ____ swim when I was a child."', options: ['could', 'can', 'can\'t'], answer: 'could' }
@@ -355,11 +507,24 @@
                 { type: 'gap-fill', question: 'She ____ (not have to) work today.', answer: 'doesn\'t have to' }
             ]
         },
-        // Add all remaining lessons based on the plan
         {
             id: 'lesson-12', title: 'Unit 12 & 36 - Pronouns & Shared tastes',
             content: {
-                theory: '### N: Niveau vereinfachen\nPronomen ersetzen Nomen, um Wiederholungen zu vermeiden. Zum Beispiel: "He" anstelle von "John". Es gibt verschiedene Arten: "I" (Subjekt), "me" (Objekt), "mine" (Possessiv).',
+                theory: `
+                ### N: Niveau vereinfachen
+                Pronomen ersetzen Nomen, um Wiederholungen zu vermeiden. Zum Beispiel: Anstatt zu sagen "John went to the store, and John bought bread," sagen wir "John went to the store, and **he** bought bread." Es gibt verschiedene Arten von Pronomen: Subjektpronomen (**I, you, he, she, it, we, they**), Objektpronomen (**me, you, him, her, it, us, them**) und Possessivpronomen (**mine, yours, his, hers, its, ours, theirs**).
+                
+                ### E: Essenz zuerst
+                Konzentrieren Sie sich auf die korrekte Verwendung von Subjekt- und Objektpronomen. Subjektpronomen führen die Handlung aus (wer oder was macht etwas), Objektpronomen empfangen die Handlung (wer oder was wird beeinflusst).
+                
+                ### U: Umsichtiger Rahmen
+                Achten Sie auf die Position im Satz. Wenn das Pronomen vor dem Verb steht, ist es oft ein Subjektpronomen. Wenn es nach dem Verb oder einer Präposition steht, ist es oft ein Objektpronomen.
+                
+                ### R: Rückruf starten
+                Bilden Sie Sätze, in denen Sie einen Namen mit einem Pronomen ersetzen. Zum Beispiel: "My friend gave the book to **me**."
+                
+                ### O: Offload aufs Papier
+                Erstellen Sie eine Tabelle mit den verschiedenen Pronomenarten, um die Formen und ihre Verwendungen zu visualisieren.`,
                 tasks: [
                     { type: 'gap-fill', text: 'He gave the book to ____.', answer: 'me' },
                     { type: 'multiple-choice', text: 'The car is ____. (mine/my)', options: ['mine', 'my'], answer: 'mine' }
@@ -373,7 +538,21 @@
         {
             id: 'lesson-13', title: 'Unit 13 & 37 - Modals 2 & Entertain me',
             content: {
-                theory: '### N: Niveau vereinfachen\n"May" und "might" drücken Möglichkeiten aus. "May" ist etwas formeller und wahrscheinlicher als "might". Zum Beispiel: "It *may* rain later." oder "It *might* rain later.".',
+                theory: `
+                ### N: Niveau vereinfachen
+                Einige Modalverben drücken Möglichkeit aus. **May** und **might** bedeuten beide "könnte", aber **might** ist in der Regel weniger wahrscheinlich. **Could** drückt auch eine Möglichkeit aus, oft in der Vergangenheit oder für eine weniger sichere Möglichkeit.
+                
+                ### E: Essenz zuerst
+                Lernen Sie die Grade der Wahrscheinlichkeit, die jedes Modalverb ausdrückt. **Must** für fast 100% Sicherheit, **may** für eine gute Chance und **might/could** für eine geringere Chance.
+                
+                ### U: Umsichtiger Rahmen
+                Der Kontext ist entscheidend. Wenn Sie die Beweise sehen, verwenden Sie **must**. Zum Beispiel: "He must be tired, he's yawning." Wenn Sie keine Beweise haben, verwenden Sie **may** oder **might**.
+                
+                ### R: Rückruf starten
+                Stellen Sie sich verschiedene Szenarien vor und beschreiben Sie, was passieren könnte. Zum Beispiel: "It's cloudy. It **might** rain." oder "He's late. He **could** have missed the bus."
+                
+                ### O: Offload aufs Papier
+                Erstellen Sie eine Skala der Wahrscheinlichkeit. Von 100% bis 0%. Platzieren Sie jedes Modalverb auf der Skala, um die Bedeutung zu visualisieren.`,
                 tasks: [
                     { type: 'gap-fill', text: 'It ____ be true, I am not sure.', answer: 'might' },
                     { type: 'multiple-choice', text: '____ I come in? (formal)', options: ['Can', 'May'], answer: 'May' }
@@ -387,7 +566,21 @@
         {
             id: 'lesson-14', title: 'Unit 14 & 38 - Modals 3 & Home territory',
             content: {
-                theory: '### N: Niveau vereinfachen\nModals für die Vergangenheit. "Must have" wird für Schlussfolgerungen verwendet. "He *must have left* early." "Can\'t have" für Unmöglichkeit: "He *can\'t have done* it."',
+                theory: `
+                ### N: Niveau vereinfachen
+                Modalverben können auch in der Vergangenheit verwendet werden, um Schlussfolgerungen über vergangene Ereignisse zu ziehen. **Must have** + Partizip Perfekt bedeutet, dass wir eine starke Schlussfolgerung ziehen. Zum Beispiel: "The lights are on. They **must have forgotten** to turn them off." **Can't have** + Partizip Perfekt bedeutet, dass etwas unmöglich ist. Zum Beispiel: "He **can't have stolen** the money, he was with me all day."
+                
+                ### E: Essenz zuerst
+                Konzentrieren Sie sich auf die Hauptform: **Modalverb + have + Partizip Perfekt**. Diese Kombination drückt eine Schlussfolgerung oder Vermutung über die Vergangenheit aus.
+                
+                ### U: Umsichtiger Rahmen
+                Achten Sie auf die Beweise, die im Satz oder Kontext gegeben werden. Sind die Beweise stark (verwenden Sie **must have**), oder machen sie etwas unmöglich (verwenden Sie **can't have**)?
+                
+                ### R: Rückruf starten
+                Denken Sie an ein vergangenes Rätsel und versuchen Sie, es zu lösen. Zum Beispiel: "The window is broken. Who **could have** done it?"
+                
+                ### O: Offload aufs Papier
+                Erstellen Sie eine Liste von Situationen und schreiben Sie die wahrscheinlichste Schlussfolgerung auf, die mit einem Modalverb gebildet wird.`,
                 tasks: [
                     { type: 'gap-fill', text: 'She\'s not here. She ____ (leave) already.', answer: 'must have left' },
                     { type: 'multiple-choice', text: 'He looks tired. He ____ (not sleep) well.', options: ['must not sleep', 'could not have slept', 'must not have slept'], answer: 'must not have slept' }
@@ -401,7 +594,21 @@
         {
             id: 'lesson-15', title: 'Unit 15 & 39 - Reported speech & Green planet',
             content: {
-                theory: '### N: Niveau vereinfachen\n"Reported speech" ist, wenn man wiedergibt, was jemand anderes gesagt hat. Normalerweise verschieben sich die Zeiten um eine Stufe zurück. Zum Beispiel: "I am happy" wird zu "He said he *was* happy".',
+                theory: `
+                ### N: Niveau vereinfachen
+                **Reported speech** (auch indirekte Rede genannt) ist, wenn wir wiedergeben, was jemand anderes gesagt hat. Normalerweise verschieben sich die Zeiten um eine Stufe in die Vergangenheit. Zum Beispiel: "I **am** happy." wird zu "He said he **was** happy."
+                
+                ### E: Essenz zuerst
+                Lernen Sie die Zeitverschiebung. **Present Simple** wird zu **Past Simple**, **Present Continuous** wird zu **Past Continuous**, **Past Simple** wird zu **Past Perfect** usw.
+                
+                ### U: Umsichtiger Rahmen
+                Achten Sie auf Zeitangaben und Orte. "Here" wird zu "there", "now" wird zu "then", "this" wird zu "that".
+                
+                ### R: Rückruf starten
+                Denken Sie an ein Gespräch, das Sie heute geführt haben. Geben Sie die Sätze in **Reported speech** wieder. Zum Beispiel: "I said I was tired."
+                
+                ### O: Offload aufs Papier
+                Erstellen Sie eine Tabelle mit zwei Spalten: "Direct Speech" und "Reported Speech". Schreiben Sie Beispiele in die linke Spalte und die entsprechende Reported speech-Version in die rechte.`,
                 tasks: [
                     { type: 'gap-fill', text: 'She said she ____ (study) for the exam.', answer: 'was studying' },
                     { type: 'multiple-choice', text: 'Which is the correct reported speech? "He said, \'I have visited Paris.\'"', options: ['He said he visited Paris.', 'He said he had visited Paris.'], answer: 'He said he had visited Paris.' }
@@ -415,7 +622,21 @@
         {
             id: 'lesson-16', title: 'Unit 16 & 40 - The passive & Read all about it',
             content: {
-                theory: '### N: Niveau vereinfachen\n"The passive" ist, wenn das Objekt eines Satzes zum Subjekt wird. Zum Beispiel: "The cat ate the mouse" (aktiv) wird zu "The mouse *was eaten* by the cat" (passiv).',
+                theory: `
+                ### N: Niveau vereinfachen
+                Das **Passiv** wird verwendet, wenn der Fokus auf der Handlung und dem Objekt liegt, nicht auf der Person, die die Handlung ausführt. Zum Beispiel: "The house **was built** in 1990." (Wir wissen nicht, wer es gebaut hat, und es ist auch nicht wichtig.)
+                
+                ### E: Essenz zuerst
+                Konzentrieren Sie sich auf die Form: **to be + Partizip Perfekt**. Merken Sie sich, dass die Zeit des Satzes durch die Form von "to be" bestimmt wird.
+                
+                ### U: Umsichtiger Rahmen
+                Denken Sie an Situationen, in denen das Passiv nützlich ist: wenn der Akteur unbekannt oder unwichtig ist, oder wenn die Handlung wichtiger ist als die Person, die sie ausführt.
+                
+                ### R: Rückruf starten
+                Verwandeln Sie fünf aktive Sätze in passive Sätze. Zum Beispiel: "The dog ate the food." wird zu "The food **was eaten** by the dog."
+                
+                ### O: Offload aufs Papier
+                Schreiben Sie Beispielsätze in beiden Formen, aktiv und passiv, nebeneinander. Das hilft, die Struktur zu visualisieren.`,
                 tasks: [
                     { type: 'gap-fill', text: 'The letter ____ (write) by my friend.', answer: 'was written' },
                     { type: 'multiple-choice', text: 'Which sentence is in the passive voice?', options: ['He built the house.', 'The house was built by him.'], answer: 'The house was built by him.' }
@@ -429,7 +650,21 @@
         {
             id: 'lesson-17', title: 'Unit 17 & 41 - Conditionals 1 & Teenage style',
             content: {
-                theory: '### N: Niveau vereinfachen\nKonditionalsätze verbinden eine Bedingung mit einem Ergebnis. Typ 1 ist für reale zukünftige Situationen: "If it *rains*, I *will stay* inside." Typ 2 ist für hypothetische Situationen: "If I *won* the lottery, I *would buy* a house."',
+                theory: `
+                ### N: Niveau vereinfachen
+                Konditionalsätze verbinden eine Bedingung mit einem Ergebnis. **Conditional Type 1** wird für reale oder sehr wahrscheinliche zukünftige Situationen verwendet. Form: **If + Present Simple, will + base form**. Beispiel: "If it **rains**, I **will stay** inside." **Conditional Type 2** wird für hypothetische oder unwahrscheinliche Situationen in der Gegenwart oder Zukunft verwendet. Form: **If + Past Simple, would + base form**. Beispiel: "If I **won** the lottery, I **would buy** a house."
+                
+                ### E: Essenz zuerst
+                Verstehen Sie den Unterschied zwischen einer realen (Type 1) und einer hypothetischen (Type 2) Bedingung.
+                
+                ### U: Umsichtiger Rahmen
+                Achten Sie auf die Zeitformen in den beiden Satzteilen (if-Klausel und Hauptsatz), um den Typ des Konditionalsatzes zu erkennen.
+                
+                ### R: Rückruf starten
+                Bilden Sie Sätze mit beiden Typen von Konditionalsätzen. Zum Beispiel: "If I **eat** too much, I **will feel** sick." (Type 1) vs. "If I **had** a million dollars, I **would travel** the world." (Type 2)
+                
+                ### O: Offload aufs Papier
+                Erstellen Sie eine Tabelle für jeden Konditionalsatztyp und notieren Sie die Form, die Verwendung und Beispielsätze.`,
                 tasks: [
                     { type: 'gap-fill', text: 'If I study, I ____ (pass) the exam.', answer: 'will pass' },
                     { type: 'multiple-choice', text: 'Which conditional type is correct? "If I had a car, I would drive to work."', options: ['Type 1', 'Type 2'], answer: 'Type 2' }
@@ -443,7 +678,21 @@
         {
             id: 'lesson-18', title: 'Unit 18 & 42 - To infinitive and -ing & School days',
             content: {
-                theory: '### N: Niveau vereinfachen\nEinige Verben werden von einem "to-infinitive" gefolgt ("I want *to go* home"), andere von einem "-ing" Verb ("I enjoy *swimming*"). Man muss einfach wissen, welches Verb welches braucht.',
+                theory: `
+                ### N: Niveau vereinfachen
+                Einige Verben werden von einem **to-infinitive** gefolgt (z.B. "I want **to go** home."), andere von einem **-ing** Verb (z.B. "I enjoy **swimming**.").
+                
+                ### E: Essenz zuerst
+                Leider gibt es keine einfache Regel, welche Verben welche Form verlangen. Sie müssen die häufigsten Verben auswendig lernen.
+                
+                ### U: Umsichtiger Rahmen
+                Achten Sie auf das Verb vor dem **to-infinitive** oder dem **-ing** Verb. Das ist der Schlüssel zur richtigen Wahl.
+                
+                ### R: Rückruf starten
+                Denken Sie an drei Verben, die ein **to-infinitive** verlangen (z.B. *decide*, *plan*, *promise*), und drei, die ein **-ing** Verb verlangen (z.B. *enjoy*, *finish*, *avoid*). Bilden Sie mit jedem Verb einen Satz.
+                
+                ### O: Offload aufs Papier
+                Erstellen Sie zwei Listen: "Verben gefolgt von to-infinitive" und "Verben gefolgt von -ing". Das hilft, die Muster zu erkennen und sich zu erinnern.`,
                 tasks: [
                     { type: 'gap-fill', text: 'I enjoy ____ (read) books.', answer: 'reading' },
                     { type: 'multiple-choice', text: 'He decided ____ (buy) a new car.', options: ['to buy', 'buying'], answer: 'to buy' }
@@ -457,7 +706,21 @@
         {
             id: 'lesson-19', title: 'Unit 19 & 43 - Conditionals 2 & The world of work',
             content: {
-                theory: '### N: Niveau vereinfachen\nVariationen von Konditionalsätzen. Man kann auch "unless" ("if not") oder "provided that" ("if") benutzen, um Bedingungen auszudrücken. Zum Beispiel: "I won\'t go *unless* you come with me".',
+                theory: `
+                ### N: Niveau vereinfachen
+                Wir können **unless** anstelle von "if not" verwenden. Es bedeutet "außer wenn". Zum Beispiel: "I won't go **unless** you come with me." Das ist dasselbe wie "I won't go **if** you **don't** come with me."
+                
+                ### E: Essenz zuerst
+                Verstehen Sie die Bedeutung von **unless**. Es ist ein einfacher Weg, eine Bedingung auszudrücken.
+                
+                ### U: Umsichtiger Rahmen
+                Achten Sie darauf, ob der Satz eine positive oder negative Bedingung ausdrückt. **Unless** wird nur mit positiven Verben verwendet.
+                
+                ### R: Rückruf starten
+                Bilden Sie drei Sätze mit **unless**. Zum Beispiel: "You won't pass the test **unless** you study."
+                
+                ### O: Offload aufs Papier
+                Schreiben Sie Beispielsätze auf und wandeln Sie sie von "if not" zu "unless" um.`,
                 tasks: [
                     { type: 'gap-fill', text: 'We will go hiking ____ it rains.', answer: 'unless' },
                     { type: 'multiple-choice', text: 'Which word can replace "if" in "I will lend you my car if you drive carefully"?', options: ['unless', 'provided that'], answer: 'provided that' }
@@ -471,7 +734,21 @@
         {
             id: 'lesson-20', title: 'Unit 20 & 44 - Prepositions 1 & University life',
             content: {
-                theory: '### N: Niveau vereinfachen\nPräpositionen sind kleine Wörter wie "in", "on", "at", die Orte, Zeiten oder Richtungen angeben. Zum Beispiel: "The book is *on* the table."',
+                theory: `
+                ### N: Niveau vereinfachen
+                Präpositionen sind kleine Wörter wie **in**, **on**, **at**, die Beziehungen zwischen Wörtern in einem Satz herstellen. Sie drücken Ort, Zeit, Richtung und andere Beziehungen aus.
+                
+                ### E: Essenz zuerst
+                Lernen Sie die häufigsten Präpositionen in Verbindung mit Zeit und Ort. Zum Beispiel: **in** für Monate und Jahre, **on** für Tage und Daten, **at** für genaue Uhrzeiten.
+                
+                ### U: Umsichtiger Rahmen
+                Achten Sie auf die Wörter vor und nach der Präposition. Manchmal hängt die Präposition vom Verb ab (z.B. *afraid **of***, *interested **in***).
+                
+                ### R: Rückruf starten
+                Beschreiben Sie, wo und wann Sie die letzten 24 Stunden verbracht haben. Verwenden Sie so viele Präpositionen wie möglich. Zum Beispiel: "I woke up **at** 7 am **in** my bed **on** Friday."
+                
+                ### O: Offload aufs Papier
+                Erstellen Sie eine Liste mit Verben und den Präpositionen, die sie verlangen. Zum Beispiel: "depend on", "listen to".`,
                 tasks: [
                     { type: 'gap-fill', text: 'I am afraid ____ spiders.', answer: 'of' },
                     { type: 'multiple-choice', text: 'Which preposition is correct? "We live ____ London."', options: ['in', 'at', 'on'], answer: 'in' }
@@ -480,11 +757,12 @@
             quiz: [
                 { type: 'multiple-choice', question: 'Wann verwendet man "at"?', options: ['Für große Orte', 'Für genaue Adressen oder Orte', 'Für Zeitperioden'], answer: 'Für genaue Adressen oder Orte' },
                 { type: 'gap-fill', question: 'She smiled ____ me.', answer: 'at' }
-            ]
+                ]
         }
     ];
 
-    // Functions
+    let currentView = 'list'; // 'list' or 'lesson'
+
     function showMessage(text) {
         messageText.textContent = text;
         messageBox.classList.remove('hidden');
@@ -497,7 +775,44 @@
     }
 
     function renderLessonList() {
-        lessonList.innerHTML = '';
+        currentView = 'list';
+        appContainer.innerHTML = `
+            <h2 class="text-3xl font-bold mb-4">Willkommen</h2>
+            <p class="text-lg mb-6">Starten Sie jetzt Ihre Vorbereitung auf das Cambridge English: First Examen. Wählen Sie eine Lektion, um zu beginnen.</p>
+
+            <section class="mb-12">
+                <h3 class="text-2xl font-bold mb-4 text-center">Ihre Lernstrategie: Die Neuro-Methode</h3>
+                <div class="grid md:grid-cols-5 gap-4">
+                    <div class="neuro-box fade-in-up" style="animation-delay: 0.1s;">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zM21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z" /></svg>
+                        <span class="text-sm">N - Niveau vereinfachen</span>
+                    </div>
+                    <div class="neuro-box fade-in-up" style="animation-delay: 0.2s;">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2l4-4M12 2a10 10 0 100 20a10 10 0 000-20z" /></svg>
+                        <span class="text-sm">E - Essenz zuerst</span>
+                    </div>
+                    <div class="neuro-box fade-in-up" style="animation-delay: 0.3s;">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8" /></svg>
+                        <span class="text-sm">U - Umsichtiger Rahmen</span>
+                    </div>
+                    <div class="neuro-box fade-in-up" style="animation-delay: 0.4s;">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                        <span class="text-sm">R - Rückruf starten</span>
+                    </div>
+                    <div class="neuro-box fade-in-up" style="animation-delay: 0.5s;">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5h6M9 19h6m-3-14v14" /></svg>
+                        <span class="text-sm">O - Offload aufs Papier</span>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="text-2xl font-bold mb-4">Lektionen</h3>
+                <div id="lesson-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                </div>
+            </section>
+        `;
+        const lessonList = document.getElementById('lesson-list');
         lessons.forEach(lesson => {
             const progress = userProgress[lesson.id] ? userProgress[lesson.id].completion : 0;
             const card = document.createElement('div');
@@ -513,13 +828,13 @@
             card.onclick = () => loadLesson(lesson);
             lessonList.appendChild(card);
         });
-        appContainerTitle.textContent = 'Lektionen';
         appContainer.classList.add('fade-in-up');
     }
 
     function loadLesson(lesson) {
         currentLesson = lesson;
         currentTaskIndex = 0;
+        currentView = 'lesson-theory';
         appContainer.classList.remove('fade-in-up');
         setTimeout(() => {
             renderLessonContent();
@@ -529,29 +844,42 @@
     function renderLessonContent() {
         if (!currentLesson) return;
 
-        const content = currentLesson.content;
         appContainer.innerHTML = `
-            <button onclick="renderLessonList()" class="btn-secondary mb-6 flex items-center">
+            <button onclick="goBack()" class="btn-secondary mb-6 flex items-center">
                 <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                 Zurück
             </button>
             <h2 class="text-3xl font-bold mb-4">${currentLesson.title}</h2>
-            <div id="lesson-content">
-                <section id="theory-section" class="mb-8 p-6 rounded-2xl card animated-entry">
-                    <h3 class="text-xl font-semibold mb-4">Theorie</h3>
-                    <div class="prose dark:prose-invert">
-                        ${marked.parse(content.theory)}
-                    </div>
-                </section>
-                <div id="tasks-container"></div>
+            <div id="content-section" class="animated-entry p-6 rounded-2xl card">
+                <h3 class="text-xl font-semibold mb-4">Theorie</h3>
+                <div class="prose dark:prose-invert">
+                    ${marked.parse(currentLesson.content.theory)}
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button id="start-tasks-btn" onclick="renderTaskSection()" class="btn-primary">Aufgaben starten</button>
+                </div>
             </div>
-            <div id="quiz-container" class="mt-8 hidden p-6 rounded-2xl card animated-entry"></div>
+            <div id="task-section" class="animated-entry p-6 rounded-2xl card mt-8 hidden"></div>
+            <div id="quiz-section" class="animated-entry p-6 rounded-2xl card mt-8 hidden"></div>
+        `;
+        appContainer.classList.add('fade-in-up');
+    }
+
+    function renderTaskSection() {
+        currentView = 'lesson-tasks';
+        const theorySection = document.getElementById('content-section');
+        const taskSection = document.getElementById('task-section');
+        theorySection.classList.add('hidden');
+        taskSection.classList.remove('hidden');
+        
+        taskSection.innerHTML = `
+            <div id="tasks-container"></div>
             <div id="navigation-buttons" class="mt-8 flex justify-between items-center">
                 <button id="prev-task-btn" onclick="prevTask()" class="btn-secondary hidden">Zurück</button>
                 <button id="next-task-btn" onclick="nextTask()" class="btn-primary">Nächste Aufgabe</button>
             </div>
         `;
-        appContainer.classList.add('fade-in-up');
+        
         renderTask();
     }
 
@@ -562,7 +890,7 @@
         tasksContainer.innerHTML = '';
         const task = currentLesson.content.tasks[currentTaskIndex];
         const taskElement = document.createElement('div');
-        taskElement.className = 'task-card p-6 rounded-2xl card animated-entry';
+        taskElement.className = 'task-card';
         
         let taskHTML = `
             <h3 class="text-xl font-semibold mb-4">Aufgabe ${currentTaskIndex + 1} von ${currentLesson.content.tasks.length}</h3>
@@ -626,8 +954,7 @@
             currentTaskIndex++;
             renderTask();
         } else {
-            // All tasks completed, show quiz
-            renderQuiz();
+            renderQuizSection();
         }
     }
 
@@ -653,15 +980,14 @@
         }
     }
 
-    function renderQuiz() {
-        const quizContainer = document.getElementById('quiz-container');
-        const tasksContainer = document.getElementById('tasks-container');
-        const navButtons = document.getElementById('navigation-buttons');
-
-        tasksContainer.innerHTML = '';
-        navButtons.innerHTML = '';
-        quizContainer.classList.remove('hidden');
-        quizContainer.innerHTML = `
+    function renderQuizSection() {
+        currentView = 'lesson-quiz';
+        const taskSection = document.getElementById('task-section');
+        const quizSection = document.getElementById('quiz-section');
+        taskSection.classList.add('hidden');
+        quizSection.classList.remove('hidden');
+        
+        quizSection.innerHTML = `
             <h3 class="text-xl font-semibold mb-4">Abschlusstest</h3>
             <p class="mb-4">Beantworten Sie die folgenden Fragen, um Ihr Wissen zu überprüfen.</p>
             <div id="quiz-questions"></div>
@@ -721,7 +1047,6 @@
         const message = `Test abgeschlossen! Sie haben ${correctAnswers} von ${totalQuestions} Fragen richtig (${score.toFixed(0)}%).`;
         showMessage(message);
 
-        // Update progress
         const totalCorrect = (userProgress[currentLesson.id]?.correct || 0) + correctAnswers;
         const totalTotal = (userProgress[currentLesson.id]?.total || 0) + totalQuestions;
         userProgress[currentLesson.id] = {
@@ -730,33 +1055,41 @@
             completion: 100
         };
 
-        // Offload aufs Papier - User should reflect on mistakes
         if (score < 100) {
             showMessage(`Test abgeschlossen! Sie haben ${correctAnswers} von ${totalQuestions} Fragen richtig (${score.toFixed(0)}%). Reflektieren Sie über Ihre Fehler, um Ihr Wissen zu festigen.`);
         } else {
             showMessage(`Test abgeschlossen! Perfekt! Sie haben alle Fragen richtig beantwortet.`);
         }
         
-        // Return to lesson list after a delay
         setTimeout(() => {
             renderLessonList();
         }, 3000);
     }
+    
+    function goBack() {
+        if (currentView === 'lesson-theory') {
+            renderLessonList();
+        } else if (currentView === 'lesson-tasks') {
+            renderLessonContent();
+        } else if (currentView === 'lesson-quiz') {
+            renderTaskSection();
+        }
+    }
 
-    // Markdown parsing for theory text
     const marked = {
         parse: (text) => {
             let html = text;
             html = html.replace(/### (.*)\n/g, '<h4 class="text-xl font-semibold mt-4 mb-2">$1</h4>');
             html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
             html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-            html = html.replace(/\[([^\]]+)]\(([^)]+)\)/g, '<a href="$2" class="text-blue-500 hover:underline">$1</a>');
+            html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+            html = html.replace(/\$\$(.*?)\$\$/g, '<div class="text-center font-mono text-lg my-2">$1</div>'); // for larger formulas
+            html = html.replace(/\$(.*?)\$/g, '<code class="font-mono text-sm">$1</code>'); // for inline math
             html = html.replace(/\n/g, '<br>');
             return html;
         }
     };
 
-    // Initial render
     window.onload = () => {
         renderLessonList();
     };
