@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambridge First Exam Trainer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dark {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .light {
+            background-color: #f0f4f8;
+            color: #1a202c;
+        }
+        .card {
+            background-color: var(--card-bg-color);
+            color: var(--card-text-color);
+        }
+        .dark .card {
+            --card-bg-color: #1e1e1e;
+            --card-text-color: #e0e0e0;
+        }
+        .light .card {
+            --card-bg-color: #ffffff;
+            --card-text-color: #1a202c;
+        }
+        .btn-primary {
+            @apply bg-blue-600 text-white font-bold py-2 px-6 rounded-xl shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105 active:scale-95;
+        }
+        .btn-secondary {
+            @apply bg-gray-200 text-gray-800 font-bold py-2 px-6 rounded-xl shadow-lg hover:bg-gray-300 transition-transform transform hover:scale-105 active:scale-95;
+        }
+        .input-text {
+            @apply w-full p-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300;
+        }
+        .dark .input-text {
+            @apply bg-gray-700 border-gray-600 text-white;
+        }
+        .lesson-card {
+            transition: transform 0.3s ease-in-out;
+        }
+        .lesson-card:hover {
+            transform: translateY(-5px);
+        }
+        .animated-entry {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .progress-bar-inner {
+            transition: width 0.5s ease-in-out;
+        }
+        /* SmartArt like visual for the Neuro method */
+        .neuro-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 1rem;
+            border-radius: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            background-color: var(--card-bg-color);
+            transition: background-color 0.3s;
+        }
+        .neuro-box svg {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 0.5rem;
+            color: #6366f1; /* Indigo color */
+        }
+        .light .neuro-box {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .dark .neuro-box {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="light">
+
+<div class="min-h-screen p-8 flex flex-col items-center">
+
+    <!-- Header and Mode Switch -->
+    <header class="w-full max-w-4xl flex justify-between items-center py-4 mb-8">
+        <h1 class="text-4xl font-bold">Cambridge First Exam Trainer</h1>
+        <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+            <!-- Icon for Light/Dark Mode -->
+            <svg id="sun-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1m-16 0H3m15.364 4.364l-.707.707M6.343 6.343l-.707-.707m12.728 0l-.707-.707M6.343 17.657l-.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <svg id="moon-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+        </button>
+    </header>
+
+    <main id="app-container" class="w-full max-w-4xl p-6 rounded-3xl card shadow-2xl animated-entry">
+        <!-- Content will be injected here by JavaScript -->
+        <h2 class="text-3xl font-bold mb-4">Willkommen</h2>
+        <p class="text-lg mb-6">Starten Sie jetzt Ihre Vorbereitung auf das Cambridge English: First Examen. Wählen Sie eine Lektion, um zu beginnen.</p>
+
+        <!-- Neuro Methode Explanation Section -->
+        <section class="mb-12">
+            <h3 class="text-2xl font-bold mb-4 text-center">Ihre Lernstrategie: Die Neuro-Methode</h3>
+            <div class="grid md:grid-cols-5 gap-4">
+                <div class="neuro-box fade-in-up" style="animation-delay: 0.1s;">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zM21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z" /></svg>
+                    <span class="text-sm">N - Niveau vereinfachen</span>
+                </div>
+                <div class="neuro-box fade-in-up" style="animation-delay: 0.2s;">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2l4-4M12 2a10 10 0 100 20a10 10 0 000-20z" /></svg>
+                    <span class="text-sm">E - Essenz zuerst</span>
+                </div>
+                <div class="neuro-box fade-in-up" style="animation-delay: 0.3s;">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8" /></svg>
+                    <span class="text-sm">U - Umsichtiger Rahmen</span>
+                </div>
+                <div class="neuro-box fade-in-up" style="animation-delay: 0.4s;">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    <span class="text-sm">R - Rückruf starten</span>
+                </div>
+                <div class="neuro-box fade-in-up" style="animation-delay: 0.5s;">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5h6M9 19h6m-3-14v14" /></svg>
+                    <span class="text-sm">O - Offload aufs Papier</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lesson List Section -->
+        <section>
+            <h3 class="text-2xl font-bold mb-4">Lektionen</h3>
+            <div id="lesson-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Lesson cards will be injected here -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Message Box for Alerts -->
+    <div id="message-box" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center p-4 z-50">
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-2xl max-w-md w-full text-center">
+            <p id="message-text" class="text-lg font-semibold mb-4"></p>
+            <button onclick="hideMessage()" class="btn-primary">OK</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const sunIcon = document.getElementById('sun-icon');
+    const moonIcon = document.getElementById('moon-icon');
+    const appContainer = document.getElementById('app-container');
+    const appContainerTitle = document.querySelector('#app-container h2');
+    const lessonList = document.getElementById('lesson-list');
+    const messageBox = document.getElementById('message-box');
+    const messageText = document.getElementById('message-text');
+
+    let currentLesson = null;
+    let currentTaskIndex = 0;
+    const userProgress = {}; // Stores user progress
+
+    // Themes
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        body.classList.toggle('light');
+        sunIcon.classList.toggle('hidden');
+        moonIcon.classList.toggle('hidden');
+    });
+
+    // Dummy Data based on the provided PDF analysis
+    const lessons = [
+        // Week 1-10 (Phase 1)
+        {
+            id: 'lesson-1', title: 'Unit 1 & 25 - Present tenses & Earth, sea and sky',
+            content: {
+                theory: '### N: Niveau vereinfachen\nDas "Present Tense" ist, wenn etwas jetzt passiert oder eine Gewohnheit ist. Zum Beispiel: "I *eat* breakfast" oder "The sun *rises* every day".',
+                tasks: [
+                    { type: 'gap-fill', text: 'She ____ (walk) to school every day.', answer: 'walks' },
+                    { type: 'multiple-choice', text: 'What is the correct form? "He ____ a book right now."', options: ['read', 'is reading', 'reads'], answer: 'is reading' }
+                ]
+            },
+            quiz: [
+                { type: 'multiple-choice', question: 'Wann benutzt man das Present Continuous?', options: ['Für abgeschlossene Handlungen', 'Für Handlungen, die jetzt passieren', 'Für Gewohnheiten'], answer: 'Für Handlungen, die jetzt passieren' },
+                { type: 'gap-fill', question: 'The climate ____ (change) rapidly.', answer: 'is changing' }
+            ]
+        },
+        {
+            id: 'lesson-2', title: 'Unit 2 & 26 - Past tenses & Living a healthy life',
+            content: {
+                theory: '### N: Niveau vereinfachen\nDas "Past Tense" ist, wenn etwas in der Vergangenheit passiert ist. Zum Beispiel: "I *ate* breakfast" oder "She *went* to the park".',
+                tasks: [
+                    { type: 'gap-fill', text: 'They ____ (play) football yesterday.', answer: 'played' },
+                    { type: 'multiple-choice', text: 'What is the correct form? "We ____ a great time last week."', options: ['had', 'have', 'were having'], answer: 'had' }
+                ]
+            },
+            quiz: [
+                { type: 'multiple-choice', question: 'Welche Zeitform benutzt man, um eine vergangene Gewohnheit auszudrücken?', options: ['Present Simple', 'Past Simple', 'Present Perfect'], answer: 'Past Simple' },
+                { type: 'gap-fill', question: 'He ____ (eat) healthy food all his life.', answer: 'ate' }
+            ]
+        },
+        {
+            id: 'lesson-3', title: 'Unit 3 & 27 - Present perfect & Sound waves',
+            content: {
+                theory: '### N: Niveau vereinfachen\nDas "Present Perfect" ist für Dinge, die in der Vergangenheit angefangen haben und immer noch relevant sind. Es ist wie eine Brücke zwischen Vergangenheit und Gegenwart. Zum Beispiel: "I *have lived* here for ten years".',
+                tasks: [
+                    { type: 'gap-fill', text: 'I ____ (not see) him since last week.', answer: 'haven\'t seen' },
+                    { type: 'multiple-choice', text: 'Which sentence is correct?', options: ['She has gone to the store yesterday.', 'She went to the store yesterday.', 'She have gone to the store yesterday.'], answer: 'She went to the store yesterday.' }
+                ]
+            },
+            quiz: [
+                { type: 'multiple-choice', question: 'Wann wird das Present Perfect verwendet?', options: ['Wenn die genaue Zeit der Handlung unbekannt ist', 'Wenn die Handlung gestern stattfand', 'Wenn die Handlung in der Zukunft stattfinden wird'], answer: 'Wenn die genaue Zeit der Handlung unbekannt ist' },
+                { type: 'gap-fill', question: 'The music ____ (start) now.', answer: 'has started' }
+            ]
+        },
+        // More lessons will be added here based on the full plan
+        {
+            id: 'lesson-4', title: 'Unit 4 & 28 - Past perfect & Highs and lows',
+            content: {
+                theory: '### N: Niveau vereinfachen\nDas "Past Perfect" ist wie die Vergangenheit der Vergangenheit. Es beschreibt eine Handlung, die vor einer anderen Handlung in der Vergangenheit passiert ist. Zum Beispiel: "I *had finished* my homework before my friend arrived."',
+                tasks: [
+                    { type: 'gap-fill', text: 'When we arrived, the movie ____ (already start).', answer: 'had already started' },
+                    { type: 'multiple-choice', text: 'What is the correct form? "By the time he came, she ____."', options: ['left', 'had left', 'have left'], answer: 'had left' }
+                ]
+            },
+            quiz: [
+                { type: 'multiple-choice', question: 'Welche Zeitform wird benutzt, um eine frühere vergangene Handlung zu beschreiben?', options: ['Past Simple', 'Past Continuous', 'Past Perfect'], answer: 'Past Perfect' },
+                { type: 'gap-fill', question: 'The students were sad because they ____ (not pass) the exam.', answer: 'had not passed' }
+            ]
+        },
+        {
+            id: 'lesson-5', title: 'Unit 5 & 29 - Future 1 & Looking back',
+            content: {
+                theory: '### N: Niveau vereinfachen\nWir benutzen "will" für spontane Entscheidungen und "going to" für Pläne. Zum Beispiel: "I\'m thirsty, I *will* get a drink." (spontan) vs. "I *am going to visit* my grandmother on Sunday." (geplant).',
+                tasks: [
+                    { type: 'gap-fill', text: 'I think it ____ (rain) tomorrow.', answer: 'will rain' },
+                    { type: 'multiple-choice', text: 'Which is correct? "Look at those clouds! It ____ rain."', options: ['will', 'is going to'], answer: 'is going to' }
+                ]
+            },
+            quiz: [
+                { type: 'multiple-choice', question: 'Welche Zukunftsaussage beschreibt einen festen Plan?', options: ['I will go to the gym.', 'I am going to go to the gym.'], answer: 'I am going to go to the gym.' },
+                { type: 'gap-fill', question: 'I am sure he ____ (get) the job.', answer: 'will get' }
+            ]
+        },
+        {
+            id: 'lesson-6', title: 'Unit 6 & 30 - Future 2 & Everyone\'s different',
+            content: {
+                theory: '### N: Niveau vereinfachen\n"Future Continuous" beschreibt eine Handlung, die zu einem bestimmten Zeitpunkt in der Zukunft im Gange sein wird. Zum Beispiel: "At 10 pm tonight, I *will be watching* a movie."\n"Future Perfect" ist für Handlungen, die bis zu einem bestimmten Zeitpunkt in der Zukunft abgeschlossen sein werden. Zum Beispiel: "By next year, I *will have saved* enough money."',
+                tasks: [
+                    { type: 'gap-fill', text: 'By this time next week, I ____ (finish) the book.', answer: 'will have finished' },
+                    { type: 'multiple-choice', text: 'At 8 PM, we ____ (sit) on the beach.', options: ['will be sitting', 'will sit', 'will have sat'], answer: 'will be sitting' }
+                ]
+            },
+            quiz: [
+                { type: 'multiple-choice', question: 'Wann verwenden Sie das Future Perfect?', options: ['Für Handlungen, die jetzt passieren', 'Für Handlungen, die zu einem bestimmten Zeitpunkt in der Zukunft abgeschlossen sein werden', 'Für feste Pläne in der Zukunft'], answer: 'Für Handlungen, die zu einem bestimmten Zeitpunkt in der Zukunft abgeschlossen sein werden' },
+                { type: 'gap-fill', question: 'Don\'t call me at 9 PM. I ____ (have) dinner.', answer: 'will be having' }
+            ]
+        },
+        {
+            id: 'lesson-7', title: 'Unit 7 & 31 - Adjectives & Get active',
+            content: {
+                theory: '### N: Niveau vereinfachen\nAdjektive beschreiben Nomen. Sie sind wie kleine "Beschreibungs-Wörter". Zum Beispiel: "the *blue* car" oder "a *happy* person". Die Position ist wichtig: normalerweisse vor dem Nomen. Z.B. "He has a *red* jacket".',
+                tasks: [
+                    { type: 'gap-fill', text: 'He is a very ____ (talent) artist.', answer: 'talented' },
+                    { type: 'multiple-choice', text: 'Which adjective form is correct?', options: ['The house is bigger.', 'The house is most big.', 'The house is more big.'], answer: 'The house is bigger.' }
+                ]
+            },
+            quiz: [
+                { type: 'multiple-choice', question: 'Wo steht das Adjektiv in "a fast car"?', options: ['Nach dem Nomen', 'Vor dem Nomen', 'Beides ist möglich'], answer: 'Vor dem Nomen' },
+                { type: 'gap-fill', question: 'This is the ____ (beautiful) painting I have ever seen.', answer: 'most beautiful' }
+            ]
+        },
+        {
+            id: 'lesson-8', title: 'Unit 8 & 32 - Adverbs & My world',
+            content: {
+                theory: '### N: Niveau vereinfachen\nAdverbien beschreiben, wie eine Handlung ausgeführt wird. Sie sagen uns, wie etwas getan wird. Viele enden auf "-ly". Zum Beispiel: "She sings *beautifully*".',
+                tasks: [
+                    { type: 'gap-fill', text: 'He ran ____ (quick).', answer: 'quickly' },
+                    { type: 'multiple-choice', text: 'What is the adverb form of "happy"?', options: ['happily', 'happier', 'happiest'], answer: 'happily' }
+                ]
+            },
+            quiz: [
+                { type: 'multiple-choice', question: 'Was beschreiben Adverbien?', options: ['Nomen', 'Verben', 'Präpositionen'], answer: 'Verben' },
+                { type: 'gap-fill', question: 'She drives ____ (careful).', answer: 'carefully' }
+            ]
+        },
+        {
+            id: 'lesson-9', title: 'Unit 9 & 33 - Questions & Moving around',
+            content: {
+                theory: '### N: Niveau vereinfachen\nFragen können einfach sein ("Are you happy?") oder komplexer, wie "Tag Questions" am Ende eines Satzes. Z.B. "You are happy, *aren\'t you*?".',
+                tasks: [
+                    { type: 'gap-fill', text: 'They live in Berlin, ____?', answer: 'don\'t they' },
+                    { type: 'multiple-choice', text: 'Which is the correct tag question? "He can\'t swim, ____?"', options: ['can he', 'can\'t he', 'does he'], answer: 'can he' }
+                ]
+            },
+            quiz: [
+                { type: 'multiple-choice', question: 'Wie lautet die Tag Question für "You haven\'t finished, ____?"', options: ['have you', 'haven\'t you', 'do you'], answer: 'have you' },
+                { type: 'gap-fill', question: 'She doesn\'t like coffee, ____?', answer: 'does she' }
+            ]
+        },
+        {
+            id: 'lesson-10', title: 'Unit 10 & 34 - Countable/uncountable & Time off',
+            content: {
+                theory: '### N: Niveau vereinfachen\nZählbare Nomen kann man zählen (ein Apfel, zwei Äpfel), nicht zählbare nicht (Wasser, Reis). Man benutzt "a/an" für zählbare Nomen und "some" oder "any" für beide.',
+                tasks: [
+                    { type: 'gap-fill', text: 'I need to buy ____ new shoes.', answer: 'some' },
+                    { type: 'multiple-choice', text: 'Which noun is uncountable?', options: ['car', 'money', 'book'], answer: 'money' }
+                ]
+            },
+            quiz: [
+                { type: 'multiple-choice', question: 'Was ist korrekt? "He has ____ homework."', options: ['an', 'a', 'some'], answer: 'some' },
+                { type: 'gap-fill', question: 'Can I have ____ water, please?', answer: 'some' }
+            ]
+        },
+        // Phase 2
+        {
+            id: 'lesson-11', title: 'Unit 11 & 35 - Modals 1 & Where you live',
+            content: {
+                theory: '### N: Niveau vereinfachen\nModals sind kleine Verben wie "can", "must", "should". Sie zeigen, wie wahrscheinlich oder notwendig etwas ist. "Must" zeigt eine Notwendigkeit, "can" eine Fähigkeit.',
+                tasks: [
+                    { type: 'gap-fill', text: 'You ____ do your homework.', answer: 'must' },
+                    { type: 'multiple-choice', text: 'What is the past tense of "can"? "I ____ swim when I was a child."', options: ['could', 'can', 'can\'t'], answer: 'could' }
+                ]
+            },
+            quiz: [
+                { type: 'multiple-choice', question: 'Wann verwendet man "should"?', options: ['Für eine Notwendigkeit', 'Für eine Empfehlung oder Ratschlag', 'Für eine Fähigkeit'], answer: 'Für eine Empfehlung oder Ratschlag' },
+                { type: 'gap-fill', question: 'She ____ (not have to) work today.', answer: 'doesn\'t have to' }
+            ]
+        },
+        // Add all remaining lessons based on the plan
+        {
+            id: 'lesson-12', title: 'Unit 12 & 36 - Pronouns & Shared tastes',
+            content: {
+                theory: '### N: Niveau vereinfachen\nPronomen ersetzen Nomen, um Wiederholungen zu vermeiden. Zum Beispiel: "He" anstelle von "John". Es gibt verschiedene Arten: "I" (Subjekt), "me" (Objekt), "mine" (Possessiv).',
+                tasks: [
+                    { type: 'gap-fill', text: 'He gave the book to ____.', answer: 'me' },
+                    { type: 'multiple-choice', text: 'The car is ____. (mine/my)', options: ['mine', 'my'], answer: 'mine' }
+                ]
+            },
+            quiz: [
+                { type: 'multiple-choice', question: 'Welches ist ein Reflexivpronomen?', options: ['her', 'herself', 'she'], answer: 'herself' },
+                { type: 'gap-fill', question: 'They saw ____ in the mirror.', answer: 'themselves' }
+            ]
+        },
+        {
+            id: 'lesson-13', title: 'Unit 13 & 37 - Modals 2 & Entertain me',
+            content: {
+                theory: '### N: Niveau vereinfachen\n"May" und "might" drücken Möglichkeiten aus. "May" ist etwas formeller und wahrscheinlicher als "might". Zum Beispiel: "It *may* rain later." oder "It *might* rain later.".',
+                tasks: [
+                    { type: 'gap-fill', text: 'It ____ be true, I am not sure.', answer: 'might' },
+                    { type: 'multiple-choice', text: '____ I come in? (formal)', options: ['Can', 'May'], answer: 'May' }
+                ]
+            },
+            quiz: [
+                { type: 'multiple-choice', question: 'Welcher Modalausdruck wird für eine starke Verpflichtung verwendet?', options: ['must', 'might', 'should'], answer: 'must' },
+                { type: 'gap-fill', question: 'He ____ have left already.', answer: 'must' }
+            ]
+        },
+        {
+            id: 'lesson-14', title: 'Unit 14 & 38 - Modals 3 & Home territory',
+            content: {
+                theory: '### N: Niveau vereinfachen\nModals für die Vergangenheit. "Must have" wird für Schlussfolgerungen verwendet. "He *must have left* early." "Can\'t have" für Unmöglichkeit: "He *can\'t have done* it."',
+                tasks: [
+                    { type: 'gap-fill', text: 'She\'s not here. She ____ (leave) already.', answer: 'must have left' },
+                    { type: 'multiple-choice', text: 'He looks tired. He ____ (not sleep) well.', options: ['must not sleep', 'could not have slept', 'must not have slept'], answer: 'must not have slept' }
+                ]
+            },
+            quiz: [
+                { type: 'multiple-choice', question: 'Welches Modalverb drückt eine logische Schlussfolgerung aus?', options: ['must', 'might', 'can'], answer: 'must' },
+                { type: 'gap-fill', question: 'She ____ (be) angry, she isn\'t answering her phone.', answer: 'must be' }
+            ]
+        },
+        {
+            id: 'lesson-15', title: 'Unit 15 & 39 - Reported speech & Green planet',
+            content: {
+                theory: '### N: Niveau vereinfachen\n"Reported speech" ist, wenn man wiedergibt, was jemand anderes gesagt hat. Normalerweise verschieben sich die Zeiten um eine Stufe zurück. Zum Beispiel: "I am happy" wird zu "He said he *was* happy".',
+                tasks: [
+                    { type: 'gap-fill', text: 'She said she ____ (study) for the exam.', answer: 'was studying' },
+                    { type: 'multiple-choice', text: 'Which is the correct reported speech? "He said, \'I have visited Paris.\'"', options: ['He said he visited Paris.', 'He said he had visited Paris.'], answer: 'He said he had visited Paris.' }
+                ]
+            },
+            quiz: [
+                { type: 'multiple-choice', question: 'Welche Zeitform wird in "reported speech" normalerweise verwendet?', options: ['Die gleiche wie im Originalsatz', 'Die Vergangenheit des Originalsatzes', 'Die Zukunft des Originalsatzes'], answer: 'Die Vergangenheit des Originalsatzes' },
+                { type: 'gap-fill', question: 'She told me that she ____ (not like) carrots.', answer: 'didn\'t like' }
+            ]
+        },
+        {
+            id: 'lesson-16', title: 'Unit 16 & 40 - The passive & Read all about it',
+            content: {
+                theory: '### N: Niveau vereinfachen\n"The passive" ist, wenn das Objekt eines Satzes zum Subjekt wird. Zum Beispiel: "The cat ate the mouse" (aktiv) wird zu "The mouse *was eaten* by the cat" (passiv).',
+                tasks: [
+                    { type: 'gap-fill', text: 'The letter ____ (write) by my friend.', answer: 'was written' },
+                    { type: 'multiple-choice', text: 'Which sentence is in the passive voice?', options: ['He built the house.', 'The house was built by him.'], answer: 'The house was built by him.' }
+                ]
+            },
+            quiz: [
+                { type: 'multiple-choice', question: 'Was ist das Hauptmerkmal des Passivs?', options: ['Der Fokus liegt auf dem Subjekt', 'Der Fokus liegt auf der Handlung und dem Objekt', 'Der Satz ist kürzer'], answer: 'Der Fokus liegt auf der Handlung und dem Objekt' },
+                { type: 'gap-fill', question: 'The window ____ (break) by a ball.', answer: 'was broken' }
+            ]
+        },
+        {
+            id: 'lesson-17', title: 'Unit 17 & 41 - Conditionals 1 & Teenage style',
+            content: {
+                theory: '### N: Niveau vereinfachen\nKonditionalsätze verbinden eine Bedingung mit einem Ergebnis. Typ 1 ist für reale zukünftige Situationen: "If it *rains*, I *will stay* inside." Typ 2 ist für hypothetische Situationen: "If I *won* the lottery, I *would buy* a house."',
+                tasks: [
+                    { type: 'gap-fill', text: 'If I study, I ____ (pass) the exam.', answer: 'will pass' },
+                    { type: 'multiple-choice', text: 'Which conditional type is correct? "If I had a car, I would drive to work."', options: ['Type 1', 'Type 2'], answer: 'Type 2' }
+                ]
+            },
+            quiz: [
+                { type: 'multiple-choice', question: 'Wann wird der Conditional Type 3 verwendet?', options: ['Für zukünftige Pläne', 'Für hypothetische vergangene Situationen', 'Für allgemeine Wahrheiten'], answer: 'Für hypothetische vergangene Situationen' },
+                { type: 'gap-fill', question: 'If he had arrived earlier, he ____ (see) the show.', answer: 'would have seen' }
+            ]
+        },
+        {
+            id: 'lesson-18', title: 'Unit 18 & 42 - To infinitive and -ing & School days',
+            content: {
+                theory: '### N: Niveau vereinfachen\nEinige Verben werden von einem "to-infinitive" gefolgt ("I want *to go* home"), andere von einem "-ing" Verb ("I enjoy *swimming*"). Man muss einfach wissen, welches Verb welches braucht.',
+                tasks: [
+                    { type: 'gap-fill', text: 'I enjoy ____ (read) books.', answer: 'reading' },
+                    { type: 'multiple-choice', text: 'He decided ____ (buy) a new car.', options: ['to buy', 'buying'], answer: 'to buy' }
+                ]
+            },
+            quiz: [
+                { type: 'multiple-choice', question: 'Welches Verb wird von einem "-ing" Verb gefolgt?', options: ['want', 'decide', 'finish'], answer: 'finish' },
+                { type: 'gap-fill', question: 'She promised ____ (help) me.', answer: 'to help' }
+            ]
+        },
+        {
+            id: 'lesson-19', title: 'Unit 19 & 43 - Conditionals 2 & The world of work',
+            content: {
+                theory: '### N: Niveau vereinfachen\nVariationen von Konditionalsätzen. Man kann auch "unless" ("if not") oder "provided that" ("if") benutzen, um Bedingungen auszudrücken. Zum Beispiel: "I won\'t go *unless* you come with me".',
+                tasks: [
+                    { type: 'gap-fill', text: 'We will go hiking ____ it rains.', answer: 'unless' },
+                    { type: 'multiple-choice', text: 'Which word can replace "if" in "I will lend you my car if you drive carefully"?', options: ['unless', 'provided that'], answer: 'provided that' }
+                ]
+            },
+            quiz: [
+                { type: 'multiple-choice', question: 'Was bedeutet "unless"?', options: ['"sofern"', '"falls nicht"', '"wenn"'], answer: '"falls nicht"' },
+                { type: 'gap-fill', question: 'You can go out ____ you finish your homework.', answer: 'provided that' }
+            ]
+        },
+        {
+            id: 'lesson-20', title: 'Unit 20 & 44 - Prepositions 1 & University life',
+            content: {
+                theory: '### N: Niveau vereinfachen\nPräpositionen sind kleine Wörter wie "in", "on", "at", die Orte, Zeiten oder Richtungen angeben. Zum Beispiel: "The book is *on* the table."',
+                tasks: [
+                    { type: 'gap-fill', text: 'I am afraid ____ spiders.', answer: 'of' },
+                    { type: 'multiple-choice', text: 'Which preposition is correct? "We live ____ London."', options: ['in', 'at', 'on'], answer: 'in' }
+                ]
+            },
+            quiz: [
+                { type: 'multiple-choice', question: 'Wann verwendet man "at"?', options: ['Für große Orte', 'Für genaue Adressen oder Orte', 'Für Zeitperioden'], answer: 'Für genaue Adressen oder Orte' },
+                { type: 'gap-fill', question: 'She smiled ____ me.', answer: 'at' }
+            ]
+        }
+    ];
+
+    // Functions
+    function showMessage(text) {
+        messageText.textContent = text;
+        messageBox.classList.remove('hidden');
+        messageBox.classList.add('flex');
+    }
+
+    function hideMessage() {
+        messageBox.classList.add('hidden');
+        messageBox.classList.remove('flex');
+    }
+
+    function renderLessonList() {
+        lessonList.innerHTML = '';
+        lessons.forEach(lesson => {
+            const progress = userProgress[lesson.id] ? userProgress[lesson.id].completion : 0;
+            const card = document.createElement('div');
+            card.className = `lesson-card p-6 rounded-2xl shadow-lg card cursor-pointer transition-all duration-300 transform hover:scale-105 animated-entry`;
+            card.style.animationDelay = `${lessons.indexOf(lesson) * 0.1}s`;
+            card.innerHTML = `
+                <h4 class="text-xl font-semibold mb-2">${lesson.title}</h4>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mt-4">
+                    <div class="progress-bar-inner bg-blue-600 h-2.5 rounded-full" style="width: ${progress}%;"></div>
+                </div>
+                <p class="text-sm mt-2">${progress.toFixed(0)}% Abgeschlossen</p>
+            `;
+            card.onclick = () => loadLesson(lesson);
+            lessonList.appendChild(card);
+        });
+        appContainerTitle.textContent = 'Lektionen';
+        appContainer.classList.add('fade-in-up');
+    }
+
+    function loadLesson(lesson) {
+        currentLesson = lesson;
+        currentTaskIndex = 0;
+        appContainer.classList.remove('fade-in-up');
+        setTimeout(() => {
+            renderLessonContent();
+        }, 300);
+    }
+
+    function renderLessonContent() {
+        if (!currentLesson) return;
+
+        const content = currentLesson.content;
+        appContainer.innerHTML = `
+            <button onclick="renderLessonList()" class="btn-secondary mb-6 flex items-center">
+                <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                Zurück
+            </button>
+            <h2 class="text-3xl font-bold mb-4">${currentLesson.title}</h2>
+            <div id="lesson-content">
+                <section id="theory-section" class="mb-8 p-6 rounded-2xl card animated-entry">
+                    <h3 class="text-xl font-semibold mb-4">Theorie</h3>
+                    <div class="prose dark:prose-invert">
+                        ${marked.parse(content.theory)}
+                    </div>
+                </section>
+                <div id="tasks-container"></div>
+            </div>
+            <div id="quiz-container" class="mt-8 hidden p-6 rounded-2xl card animated-entry"></div>
+            <div id="navigation-buttons" class="mt-8 flex justify-between items-center">
+                <button id="prev-task-btn" onclick="prevTask()" class="btn-secondary hidden">Zurück</button>
+                <button id="next-task-btn" onclick="nextTask()" class="btn-primary">Nächste Aufgabe</button>
+            </div>
+        `;
+        appContainer.classList.add('fade-in-up');
+        renderTask();
+    }
+
+    function renderTask() {
+        const tasksContainer = document.getElementById('tasks-container');
+        if (!tasksContainer) return;
+
+        tasksContainer.innerHTML = '';
+        const task = currentLesson.content.tasks[currentTaskIndex];
+        const taskElement = document.createElement('div');
+        taskElement.className = 'task-card p-6 rounded-2xl card animated-entry';
+        
+        let taskHTML = `
+            <h3 class="text-xl font-semibold mb-4">Aufgabe ${currentTaskIndex + 1} von ${currentLesson.content.tasks.length}</h3>
+            <p class="mb-4">${task.text}</p>
+        `;
+
+        if (task.type === 'gap-fill') {
+            taskHTML += `
+                <input type="text" id="task-input" class="input-text" placeholder="Ihre Antwort hier...">
+                <button onclick="checkGapFill()" class="btn-primary mt-4">Prüfen</button>
+            `;
+        } else if (task.type === 'multiple-choice') {
+            taskHTML += '<div class="flex flex-col space-y-2 mt-4">';
+            task.options.forEach(option => {
+                taskHTML += `
+                    <button onclick="checkMultipleChoice('${option}')" class="multiple-choice-btn btn-secondary text-left">${option}</button>
+                `;
+            });
+            taskHTML += '</div>';
+        }
+        taskElement.innerHTML = taskHTML;
+        tasksContainer.appendChild(taskElement);
+
+        updateNavigationButtons();
+    }
+
+    function checkGapFill() {
+        const input = document.getElementById('task-input');
+        const task = currentLesson.content.tasks[currentTaskIndex];
+        if (input.value.trim().toLowerCase() === task.answer.toLowerCase()) {
+            showMessage('Richtig! Gut gemacht.');
+            userProgress[currentLesson.id] = userProgress[currentLesson.id] || { correct: 0, total: 0 };
+            userProgress[currentLesson.id].correct++;
+            userProgress[currentLesson.id].total++;
+        } else {
+            showMessage(`Leider falsch. Die richtige Antwort ist: "${task.answer}".`);
+            userProgress[currentLesson.id] = userProgress[currentLesson.id] || { correct: 0, total: 0 };
+            userProgress[currentLesson.id].total++;
+        }
+    }
+
+    function checkMultipleChoice(selectedOption) {
+        const task = currentLesson.content.tasks[currentTaskIndex];
+        const buttons = document.querySelectorAll('.multiple-choice-btn');
+        buttons.forEach(btn => btn.disabled = true);
+
+        if (selectedOption === task.answer) {
+            showMessage('Richtig! Gut gemacht.');
+            userProgress[currentLesson.id] = userProgress[currentLesson.id] || { correct: 0, total: 0 };
+            userProgress[currentLesson.id].correct++;
+            userProgress[currentLesson.id].total++;
+        } else {
+            showMessage(`Leider falsch. Die richtige Antwort ist: "${task.answer}".`);
+            userProgress[currentLesson.id] = userProgress[currentLesson.id] || { correct: 0, total: 0 };
+            userProgress[currentLesson.id].total++;
+        }
+    }
+
+    function nextTask() {
+        if (currentTaskIndex < currentLesson.content.tasks.length - 1) {
+            currentTaskIndex++;
+            renderTask();
+        } else {
+            // All tasks completed, show quiz
+            renderQuiz();
+        }
+    }
+
+    function prevTask() {
+        if (currentTaskIndex > 0) {
+            currentTaskIndex--;
+            renderTask();
+        }
+    }
+
+    function updateNavigationButtons() {
+        const prevBtn = document.getElementById('prev-task-btn');
+        const nextBtn = document.getElementById('next-task-btn');
+        if (currentTaskIndex > 0) {
+            prevBtn.classList.remove('hidden');
+        } else {
+            prevBtn.classList.add('hidden');
+        }
+        if (currentTaskIndex === currentLesson.content.tasks.length - 1) {
+            nextBtn.textContent = 'Zum Abschlusstest';
+        } else {
+            nextBtn.textContent = 'Nächste Aufgabe';
+        }
+    }
+
+    function renderQuiz() {
+        const quizContainer = document.getElementById('quiz-container');
+        const tasksContainer = document.getElementById('tasks-container');
+        const navButtons = document.getElementById('navigation-buttons');
+
+        tasksContainer.innerHTML = '';
+        navButtons.innerHTML = '';
+        quizContainer.classList.remove('hidden');
+        quizContainer.innerHTML = `
+            <h3 class="text-xl font-semibold mb-4">Abschlusstest</h3>
+            <p class="mb-4">Beantworten Sie die folgenden Fragen, um Ihr Wissen zu überprüfen.</p>
+            <div id="quiz-questions"></div>
+            <button onclick="submitQuiz()" class="btn-primary mt-6 w-full">Test abschicken</button>
+        `;
+
+        const quizQuestionsContainer = document.getElementById('quiz-questions');
+        currentLesson.quiz.forEach((question, index) => {
+            let questionHTML = `
+                <div class="mb-4 p-4 rounded-lg bg-gray-100 dark:bg-gray-800">
+                    <p class="font-semibold mb-2">${index + 1}. ${question.question}</p>
+            `;
+            if (question.type === 'gap-fill') {
+                questionHTML += `<input type="text" id="quiz-input-${index}" class="input-text" placeholder="Ihre Antwort...">`;
+            } else if (question.type === 'multiple-choice') {
+                questionHTML += '<div class="flex flex-col space-y-2">';
+                question.options.forEach(option => {
+                    questionHTML += `
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="quiz-q-${index}" value="${option}" class="form-radio text-blue-600">
+                            <span class="ml-2">${option}</span>
+                        </label>
+                    `;
+                });
+                questionHTML += '</div>';
+            }
+            questionHTML += '</div>';
+            quizQuestionsContainer.innerHTML += questionHTML;
+        });
+    }
+
+    function submitQuiz() {
+        let correctAnswers = 0;
+        let totalQuestions = currentLesson.quiz.length;
+
+        currentLesson.quiz.forEach((question, index) => {
+            if (question.type === 'gap-fill') {
+                const input = document.getElementById(`quiz-input-${index}`);
+                if (input.value.trim().toLowerCase() === question.answer.toLowerCase()) {
+                    correctAnswers++;
+                }
+            } else if (question.type === 'multiple-choice') {
+                const radios = document.getElementsByName(`quiz-q-${index}`);
+                let selectedOption = null;
+                radios.forEach(radio => {
+                    if (radio.checked) {
+                        selectedOption = radio.value;
+                    }
+                });
+                if (selectedOption === question.answer) {
+                    correctAnswers++;
+                }
+            }
+        });
+
+        const score = (correctAnswers / totalQuestions) * 100;
+        const message = `Test abgeschlossen! Sie haben ${correctAnswers} von ${totalQuestions} Fragen richtig (${score.toFixed(0)}%).`;
+        showMessage(message);
+
+        // Update progress
+        const totalCorrect = (userProgress[currentLesson.id]?.correct || 0) + correctAnswers;
+        const totalTotal = (userProgress[currentLesson.id]?.total || 0) + totalQuestions;
+        userProgress[currentLesson.id] = {
+            correct: totalCorrect,
+            total: totalTotal,
+            completion: 100
+        };
+
+        // Offload aufs Papier - User should reflect on mistakes
+        if (score < 100) {
+            showMessage(`Test abgeschlossen! Sie haben ${correctAnswers} von ${totalQuestions} Fragen richtig (${score.toFixed(0)}%). Reflektieren Sie über Ihre Fehler, um Ihr Wissen zu festigen.`);
+        } else {
+            showMessage(`Test abgeschlossen! Perfekt! Sie haben alle Fragen richtig beantwortet.`);
+        }
+        
+        // Return to lesson list after a delay
+        setTimeout(() => {
+            renderLessonList();
+        }, 3000);
+    }
+
+    // Markdown parsing for theory text
+    const marked = {
+        parse: (text) => {
+            let html = text;
+            html = html.replace(/### (.*)\n/g, '<h4 class="text-xl font-semibold mt-4 mb-2">$1</h4>');
+            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+            html = html.replace(/\[([^\]]+)]\(([^)]+)\)/g, '<a href="$2" class="text-blue-500 hover:underline">$1</a>');
+            html = html.replace(/\n/g, '<br>');
+            return html;
+        }
+    };
+
+    // Initial render
+    window.onload = () => {
+        renderLessonList();
+    };
+
+</script>
+</body>
+</html>
